@@ -1,0 +1,248 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/scrollTo.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+<title>Think 2.0 | IT-blog </title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/think.css" rel="stylesheet" type="text/css">
+<link href="css/dropdown.css" rel="stylesheet" type="text/css">
+<link href="css/scrollup.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" charset="utf-8">
+		$(function () { // run this code on page load (AKA DOM load)
+
+			/* set variables locally for increased performance */
+			var scroll_timer;
+			var displayed = false;
+			var $message = $('#message');
+			var $window = $(window);
+			var top = $(document.body).children(0).position().top;
+
+			/* react to scroll event on window */
+			$window.scroll(function () {
+				window.clearTimeout(scroll_timer);
+				scroll_timer = window.setTimeout(function () { // use a timer for performance
+					if($window.scrollTop() <= top) // hide if at the top of the page
+					{
+						displayed = false;
+						$message.fadeOut(500);
+					}
+					else if(displayed == false) // show if scrolling down
+					{
+						displayed = true;
+						$message.stop(true, true).fadeIn(500).click(function () { $message.fadeOut(500); });
+					}
+				}, 100);
+			});
+			$('#top-link').click(function(e) { 
+				e.preventDefault();
+				$.scrollTo(0,300); 
+			   });
+		});
+	</script>
+    
+<!-- 
+Дополнительные сведения об условных комментариях вокруг HTML-тегов в верхней части файла:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Выполните следующие действия, если вы используете модифицированную сборку modernizr (http://www.modernizr.com/):
+* вставьте здесь ссылку на свой javascript;
+* удалите ссылку ниже на html5shiv;
+* добавьте класс no-js в HTML-теги в верхней части;
+* вы также можете удалить ссылку на respond.min.js, если MQ Polyfill входит в сборку modernizr. 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="css/respond.min.js"></script>
+</head>
+<body>
+
+  <div id="LayoutDiv1" class="navbar"><!-- NAVBAR -->
+        <div class="inNavbar">
+             <ul class="menu"><!-- MENU -->
+                    <li><a href=""><img src="images/icon_home.png" width="15" class="imgNavbar">Главная</a></li>
+                    <li><a href=""><img src="images/icon_list.png" width="15" class="imgNavbar">О блоге</a>
+                        <ul>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Производство</a></li>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Клиенты</a></li>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Для партнеров</a></li>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Для клиентов</a></li>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Реклама</a></li>
+                            <li><a href=""><img src="images/icon_label.png"  width="15" class="imgNavbar">Производство</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><img src="images/icon_market.png" width="15" class="imgNavbar">Маркет</a></li>
+                    <li><a href=""><img src="images/icon_free.png" width="15" class="imgNavbar">Фриланс</a></li>
+                    <li><a href=""><img src="images/icon_faq.png" width="15" class="imgNavbar">FAQ</a></li>
+                    <li><a href=""><img src="images/icon_info.png" width="15" class="imgNavbar">О нас</a></li>
+          </ul><!-- MENU -->
+        </div>
+  </div><!-- NAVBAR -->
+  
+ <div class="gridContainer clearfix">
+  
+  
+  <div class="mainBlock"><!-- MAIN BLOCK -->
+  
+      <div class="leftInBlock"><!-- LEFT BLOCK -->
+    
+    	<div class="logoBlock"><!-- LOGO AND QUOTE-->
+        	<a href="#"><img src="images/logo.png" class="inLogo"></a>
+            <h3 class="leftBlockQuote">Я верю в возможности...</h3>
+        </div><!-- LOGO AND QUOTE-->
+        
+        <div class="profileBlock">
+        	<center><img src="images/profile.jpg" class="profileAvatar"></center>
+            <p class="profileName"> Leonard Hofstedor </p>
+            <p class="profileName"> Physics Theoretic </p>
+        </div>
+        
+        <div class="enterBlock"><!-- LOGIN BLOCK -->
+       		 <p><center>Личный кабинет</center></p>
+        	<form class="enterForm">
+            	<input type="text" class="loginPlace" placeholder="Ваш email" >
+                <input type="password" class="passwordPlace" placeholder="Пароль" />
+                <input type="submit" class="enterBtn" value="Войти" />
+            </form>
+        </div><!-- LOGIN BLOCK -->
+        
+
+        <ul class="leftProfileMenu"> <!-- LEFT MENU BAR -->
+            <li><div class="leftMenuDiv"><a href="#"><img src="images/icon_add.png" width="20" class="imgLeftMenu">Написать статью</a></div></li>
+            <li><div class="leftMenuDiv"><a href="#"><img src="images/icon_addquestion.png" width="20" class="imgLeftMenu">Задать вопрос</a></div></li>
+        	<li><div class="leftMenuDiv"><a href="#">Мой профиль</a></div></li>
+            <li><div class="leftMenuDiv"><a href="#">Мои статьи</a></div></li>
+            <li><div class="leftMenuDiv"><a href="#">Мои вопросы</a></div></li>
+            <li><div class="leftMenuDiv"><a href="#">Мои настройки</a></div></li>
+            <li><div class="leftMenuDiv"><a href="#">Выход</a></div></li>
+        </ul> <!-- LEFT MENU BAR -->
+        
+         <div id="rightSelectorBlock" class="rightSelectorBlock"> <!-- LEFT SEARCH BLOCK -->
+             <form>
+             	<select class="rightSelector">
+                    <OPTION VALUE="option_1" selected> Категория
+                    <OPTION VALUE="option_1" > 1-комнатная квартира
+                    <OPTION VALUE="option_1" > 2-комнатная квартира
+                    <OPTION VALUE="option_1" > 3-комнатная квартира
+                    <OPTION VALUE="option_1" > 4-комнатная квартира
+                    <OPTION VALUE="option_1" > 5-комнатная квартира
+                    <OPTION VALUE="option_1" > Многокомнатные квартиры
+                    <OPTION VALUE="option_1" > Дом
+                    <OPTION VALUE="option_1" > Гараж
+                    <OPTION VALUE="option_1" > Земли и дачи
+                    <OPTION VALUE="option_1" > Коммерческие помещения
+                    <OPTION VALUE="option_1" > Недвижимость за рубежом
+                    <OPTION VALUE="option_1" > Прочая недвижимость
+               		</select>
+                <input type="submit" class="rightSelectorBtn" value="Перейти">
+             </form>
+             </div> <!-- LEFT SEARCH BLOCK -->
+      
+      </div><!-- LEFT BLOCK -->
+      
+       <div class="rightInBlock"><!-- RIGHT BLOCK -->
+      
+      <!-- Litte information about blog -->
+       <h3 class="rightTitleAbout"><img src="images/icon_faqblack.png" width="20" class="imgNavbar"> О блоге </h3>
+       	<p class="rightTextAbout"> Within is a complete and original theme for Tumblr, featuring horizontal content. Instead of scrolling through your posts, you can now switch from one to another with only one click. This puts the focus on the current displayed post, so your visitors don't miss what you're blogging.</p>
+     <!-- Litte information about blog -->
+     
+
+             <h3 class="rightTitleAbout"><img src="images/icon_popular.png" width="25" class="imgNavbar"> Популярные за сутки </h3>
+             <div class="popularBlock"><!-- Popular List of Articles -->
+                <ul class="popularList">
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a></li>
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками</a></li>
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a></li>
+            <li><a href="#">HD изображением и трекингом головы</a></li>
+            <li><a href="#">Собираем за один вечер</a></li>
+            <li><a href="#">Собираем за один</a></li>
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a></li>
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками</a></li>
+            <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a></li>
+            <li><a href="#">HD изображением и трекингом головы</a></li>
+                </ul>
+             </div><!-- Popular List of Articles -->
+             
+             <h3 class="rightTitleAbout"><img src="images/icon_about.png" width="25" class="imgNavbar">Что обсуждают?</h3>
+             <div class="popularBlock"><!-- Faq Questions -->
+                <ul class="popularList">
+                    <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a><strong class="faqotv">(5)</strong></li>
+                    <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками</a><strong class="faqotv">(5)</strong></li>
+                    <li><a href="#">Собираем за один вечер Virtual Reality шлем своими руками, с HD изображением и трекингом головы</a><strong class="faqotv">(5)</strong></li>
+                    <li><a href="#">HD изображением и трекингом головы</a><strong class="faqotv">(5)</strong></li>
+                    <li><a href="#">Собираем за один вечер</a><strong class="faqotv">(5)</strong></li>
+                </ul>
+             </div><!-- Faq Questions -->
+             
+         
+       </div><!-- RIGHT BLOCK -->
+      
+       <div class="centerInBlock" style=""><!-- CENTER BLOCK -->
+       
+         <div id="cBlocks" class="cBlocks"><!-- IN CENTER BLOCKS -->
+             <div class="cBlockTitle"><p><a href="#">Once upon a time, there was a Tumblr theme with horizontal content</a></p></div>
+             <p class="cBlockText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+         	<div class="clearfix"> </div>
+            <p class="cBlockComment"><img src="images/icon_category.png" width="10" class="imgBlockComment"> Программирование </p>            <p class="cBlockComment"><img src="images/icon_tags.png" width="10" class="imgBlockComment"> #tags,#tags </p>
+         
+          <table class="cBlockDownMenu">
+          <tr>
+          	<td>
+            	<div class="cBlockAuthor">
+               <p class="authorName"><img src="images/icon_avatar.png" width="20" class="imgAvatar"><a href="#"> Leonard Hofstedar</a> </p>
+                </div>
+            </td>
+          </tr>
+          </table>
+            <table class="cBlockDownMenu" style="background:#F9F9F9;">
+            <tr>
+            	 <td>
+                   <div class="dateBlock">
+                   <strong class="cDate">Создано: 12/12/12</strong>
+                    </div>
+                 </td>
+                 <td>
+                  <div class="dateBlock">
+                   <strong class="cComment"><img src="images/icon_comments.png" width="10" class=""> 5 коммент.</strong>
+                    </div>
+                 </td>
+                <td>
+                	<div class="moreBlock">
+                   	 <strong class="moreText"><a href="#">Читать дальще ... </a></strong>
+                    </div>
+                </td>
+            </tr>
+            </table> 
+         </div><!-- IN CENTER BLOCKS -->
+         
+
+         
+         
+      </div><!-- CENTER BLOCK -->
+      
+  	  <div style="display:inline-block;width:100%;"></div>
+  
+  <div class="centerDownLine"></div><!-- FOOTER TEXT -->
+  <h1 class="centerDownAuthor"> © 2013–2014 Think.uz Powered by Mirzaev Khayot  </h1><!-- FOOTER TEXT -->
+  
+  
+  </div><!-- MAIN BLOCK -->
+
+</div>
+<div id="message"><a href="#top" id="top-link"><img src="images/scrollup.png" width="50"></a></div>
+</body>
+</html>

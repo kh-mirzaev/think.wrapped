@@ -1,0 +1,67 @@
+.mainMarketBlock {
+	width:100%;
+	background:#D4D4D4;
+	}
+.leftMarketBlock {
+	float:left;
+	width:22%;
+	position:relative;
+	overflow:hidden;
+	box-shadow:1px 0px 7px #C9C9C9;
+	background:#EDEDED;
+	}
+.rightMarketBlock {
+	margin-left:2%;
+	float:left;
+	width:75%;
+	}
+
+
+.goodsBlock:hover { 
+	box-shadow:2px 3px 5px #666666;
+	border:1px solid #CCC;
+}
+.goodsBlock {
+	width:200px;
+	margin:5px 10px;
+	border:1px solid #C8C8C8;
+	float:left;
+	position:relative;
+	z-index:1;
+	}
+.goodsImg {
+	width:200px;
+	border-radius:2px;
+	position:relative;
+	z-index:2;
+	}
+.saleBlock {
+	position: absolute;
+	top:0px;
+	right:0px;
+	z-index:3;
+	width:100px;
+	height:100px;
+	background:url(../images/pics/sale.png) no-repeat;
+	}
+.goodsTitleBlock {
+	border-radius:2px;
+	padding:8px 8px;
+	background:#00C184;;
+	}
+.goodsTitle a {
+	text-decoration:none;
+	color:#FFF;
+	text-align: center;
+	font-size: 1em;
+	}	
+.goodsPriceBlock {
+	border-radius:2px;
+	padding:8px 8px;
+	background:#fff;;
+	}
+.goodsPrice {
+	color:#f00;
+	text-align: center;
+	font-size: 1.2em;
+	}

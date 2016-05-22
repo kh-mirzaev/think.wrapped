@@ -1,0 +1,30 @@
+		#message
+		{
+			/* display: block before hiding */
+			display: block;
+			display: none;
+
+			/* link is above all other elements */
+			z-index: 999; 
+
+			/* link doesn't hide text behind it */
+			opacity: .6;
+
+			/* link stays at same place on page */
+			position: fixed;
+
+			/* link goes at the bottom of the page */
+		/* = height + preferred bottom margin */
+			bottom:20px;
+			/* link is centered */
+			right:20px;
+
+			/* round the corners (to your preference) */
+			-moz-border-radius: 24px;
+			-webkit-border-radius: 24px;
+
+			/* make it big and easy to see (size, style to preferences) */
+			width: 50px;
+		}
+		
+		#message a { color: #fff; }
